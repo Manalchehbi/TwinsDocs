@@ -68,3 +68,12 @@ background-color: #e8f0fe;
     width: 250px;
   }
   
+  .menu-choix {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  

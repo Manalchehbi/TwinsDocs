@@ -1,6 +1,7 @@
-import React from "react";
-import "../../css/sidebare.css"
 
+import React, { useState } from "react";
+import "../../css/sidebare.css"
+import Folder from './../Components/Folders/MenuChoix';
 import MobileScreenShareIcon from '@mui/icons-material/MobileScreenShare';
 import DevicesIcon from '@mui/icons-material/Devices';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
@@ -9,14 +10,24 @@ import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import CloudQueueIcon from '@mui/icons-material/CloudQueue';
-function Sidebare(){                                                                
+function Sidebare(){   
+    const [isDialogOpen, setDialogOpen] = useState(false);
+
+    const handleAjouterClick = () => {
+      setDialogOpen(true);
+    };
+  
+    const handleDialogClose = () => {
+      setDialogOpen(false);
+    };                                                 
     return(
           <div class="sidebare">
-                <div class="sidebare_btn">
-                    <button>
-                        <img src="https://cdn.icon-icons.com/icons2/834/PNG/512/plus_icon-icons.com_66718.png" width={30} alt="" />
-                        <span>Ajouter</span>
-                    </button>
+                 <div className="sidebare_btn">
+                 <button onClick={handleAjouterClick}>
+          <img src="https://cdn.icon-icons.com/icons2/834/PNG/512/plus_icon-icons.com_66718.png" width={30} alt="" />
+          <span>Ajouter</span>
+        </button>
+                  
                 </div>
                 <div class="header_icons-left">
                 <div className="sidebare_options">
@@ -57,6 +68,17 @@ function Sidebare(){
                     </div>
                  </div>
                  </div>
+                 {isDialogOpen && (
+        <div className="dialog-box menu-choix">
+          <ul>
+            <li>Télécharger un fichier</li>
+            <li>Créer un dossier</li>
+            <li>Ajouter un fichier existant</li>
+          </ul>
+          <button onClick={handleDialogClose}>Fermer</button>
+        </div>
+      )}
+
             </div>
               
           )
