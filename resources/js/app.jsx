@@ -5,6 +5,7 @@ import {BrowserRouter,Routes ,Route} from "react-router-dom";
 import "../css/index.css"
 import Employes from './Components/Employes/Employes';
 import Folder from './Components/Folders/Folders';
+import Model from './Components/Folders/Model';
 import Create from './Components/Employes/Create';
 import Edit from './Components/Employes/Edit';
 import Header from './Components/Header';
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('app')).render(
        <div className="App">
             <Sidebare/>
              <Folder/>
+             <Model/>
        </div>
        
 

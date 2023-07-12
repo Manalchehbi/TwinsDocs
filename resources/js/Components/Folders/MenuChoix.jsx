@@ -21,16 +21,23 @@ const MenuChoix = () => {
       {/* Affichage conditionnel du menu */}
       {afficherMenu && (
         <div className="menu-choix">
-          {/* Liste des choix */}
-          <div onClick={() => selectionnerChoix('telecharger')}>
-            Télécharger un fichier
-          </div>
-          <div onClick={() => selectionnerChoix('dossier')}>
-            Créer un nouveau dossier
-          </div>
-          <div onClick={() => selectionnerChoix('nouveau')}>
-            Créer un nouveau document
-          </div>
+             <div className="menu-option">
+                {/* Liste des choix */}
+                <div onClick={() => selectionnerChoix('telecharger')}>
+                    Télécharger un fichier
+                </div>
+             </div>
+             <div className="menu-option">
+
+                <div onClick={() => selectionnerChoix('dossier')}>
+                    Créer un nouveau dossier
+                </div>
+             </div>
+             <div className="menu-option">
+                <div onClick={() => selectionnerChoix('nouveau')}>
+                    Créer un nouveau document
+                </div>
+              </div>
         </div>
       )}
 

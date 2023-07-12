@@ -70,10 +70,42 @@ background-color: #e8f0fe;
   
   .menu-choix {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 50px;
+    right: 10px;
     background-color: white;
     border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
+    z-index: 999;
   }
+  
+  .menu-choix ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-choix li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .menu-choix li:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .menu-choix button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .menu-choix button:hover {
+    background-color: #3367d6;
+  }
+  
   
