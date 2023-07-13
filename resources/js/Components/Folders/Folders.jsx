@@ -1,5 +1,9 @@
-import React from "react";
+
 import "../../../css/folder.css"
+import styled from "@emotion/styled";
+
+import React, { useEffect, useRef } from "react";
+import FileContainer from './FileContainer';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import InfoIcon from '@mui/icons-material/Info';import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
@@ -38,6 +42,16 @@ function Folder(){
                         <p>Nom_fichier.txt</p>
                      </div>
                   </div>
+                  <Margin>
+                  <SemiTitle>
+                           Dossiers
+                        </SemiTitle>
+                     <GridContainer>
+                        <FileContainer />
+                     </GridContainer>
+
+                  </Margin>
+
                   <div className="data_list">
                      <div className="detailsRow">
                         <p><b>Name<ArrowDownwardIcon/></b></p>
@@ -60,5 +74,21 @@ function Folder(){
                                                                                                                     
                                                                                                                                                 
 }         
-export default Folder                                                                                                                                                     
+export default Folder;
+const SemiTitle = styled.div `
+font-size: 14px;
+font-weight:500;
+text-transform: capitalize;
+color: #5f6368;
+
+`    
+ 
+const GridContainer = styled.div `
+padding-left: 20px;
+   display: grid;
+   grid-template-columns: repeat(3,minmax(0,1fr));
+   margin: 20px 0;
+   cursor:pointer;
+`   
+const Margin = styled.div  ``                                                                                                                                                 
         

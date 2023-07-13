@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById('app')).render(
        <div className="App">
             <Sidebare/>
              <Folder/>
-             <Model/>
+         
        </div>
        
 

@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import "../../css/sidebare.css"
-import Folder from './../Components/Folders/MenuChoix';
+import Model from './Folders/Model';
 import MobileScreenShareIcon from '@mui/icons-material/MobileScreenShare';
 import DevicesIcon from '@mui/icons-material/Devices';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
@@ -69,14 +69,7 @@ function Sidebare(){
                  </div>
                  </div>
                  {isDialogOpen && (
-        <div className="dialog-box menu-choix">
-          <ul>
-            <li>Télécharger un fichier</li>
-            <li>Créer un dossier</li>
-            <li>Ajouter un fichier existant</li>
-          </ul>
-          <button onClick={handleDialogClose}>Fermer</button>
-        </div>
+       <Model/>
       )}
 
             </div>

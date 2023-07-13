@@ -1,24 +1,52 @@
 import React from "react";
 import "../../../css/folder.css"
+import UploadFileIcon from '@mui/icons-material/UploadFile';
+import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
+import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import InfoIcon from '@mui/icons-material/Info';import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { AddPhotoAlternate, CreateNewFolder } from "@mui/icons-material";
 import styled from "@emotion/styled";
-function Model(){                                                                
+function Model(){     
+
+    const modalRef = useRef(null);
+  
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (modalRef.current && !modalRef.current.contains(event.target)) {
+          setDialogOpen(false);
+        }
+      };
+  
+      document.addEventListener("click", handleClickOutside);
+  
+      return () => {
+        document.removeEventListener("click", handleClickOutside);
+      };
+    }, []);
+                                                             
     return <Container>
                  <Wrapper>
                     <Header>
                         <Wraps>
                             <CreateNewFolder/>
-                            <span>Dossier</span>
+                            <span>Créer nouveau dossier</span>
+                        </Wraps>
+                    </Header> 
+                    <Header>
+                        <Wraps>
+                            <DriveFolderUploadIcon/>
+                            <span>Importer Dossier</span>
                         </Wraps>
                     </Header>
+                    <Header>
                         <Wraps>
-                            <AddPhotoAlternate/>
-                            <span>Photo</span>
+                            <UploadFileIcon/>
+                            <span>Importer Fichier </span>
                         </Wraps>
+                    </Header>
                  </Wrapper>
            </Container>
 }
